@@ -41,3 +41,35 @@
 
     <!-- Add this script at the end of your HTML, just before </body> -->
     <script>
+
+        $(document).ready(function () {
+
+            $("#currentDay").text(dayjs().format("dddd, MMMM D,YYYY"));
+
+            for (var hour = 9; hour <= 17; hour++) {
+
+                var timeBlock = $("<div>").addClass("row");
+                timeBlock.addClass("time-block");
+
+                var hourColumn = $("<div>").addClass("col-md-1 hour").text(dayjs().hour(hour).format("hA"));
+                timeBlock.append(hourColumn);
+
+                var TextA = $("<textarea>").addClass("col-md-10 description");
+                timeBlock.append(TextA);
+
+                switch (true) {
+                case hour < dayjs().hour():
+                timeBlock.addClass("past");
+                break;
+                case hour === dayjs().hour():
+                timeBlock.addClass("present");
+                break;
+                default:
+                timeBlock.addClass("future");
+
+                }
+
+                var saveBtn 
+
+            }
+        }

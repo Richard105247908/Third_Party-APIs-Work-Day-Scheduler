@@ -71,5 +71,10 @@
 
                 var saveBtn = $("<button>").addClass("col-md-1 saveBtn").html('<i class="fas fa-save"></i>');
 
+                saveBtn.on("click", function () {
+                    var textEvent = $(this).siblings("textarea").val();
+                    var hourEvent = $(this).parent().attr("data-hour");
+                })
+
             }
         }
